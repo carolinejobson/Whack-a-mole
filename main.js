@@ -5,6 +5,29 @@ let score = 0
 
 const sound = new Audio("assets/smash.mp3")
 
+const song = new Audio("https://carolinejobson.github.io/Whack-a-mole/molesong.mp3?raw=true");
+
+
+// Adding function playAudio,loopAudio, stopAudio and play to start audio for startGame and stopping it for stopGame
+
+function playAudio(audioObject) {
+  audioObject.play();
+}
+//this is th audio loop
+
+function loopAudio(audioObject) {
+  audioObject.loop = true;
+  playAudio(audioObject);
+}
+
+function stopAudio(audioObject) {
+  audioObject.pause();
+}
+
+function play(){
+  playAudio(song);
+}
+
 function run(){
     const i = Math.floor(Math.random() * holes.length)
     const hole = holes[i]
